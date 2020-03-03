@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        
+        <p><a href="./Users/IndexUser">Users</a>.</p>
+        <p><a href="./Companies/Index">Companies</a>.</p>
+        <form method="get" action="./Companies">
+            <p>
+                @*Что ищем:*@
+                <input type="text" name="SearchString" size="50" />
+                <input type="submit" value="Search" />
+            </p>
+        </form>
+    </div>

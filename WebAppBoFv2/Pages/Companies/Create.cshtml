@@ -1,0 +1,99 @@
+﻿@page
+@model WebAppBoFv2.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company.Org_name" class="control-label"></label>
+                <input asp-for="Company.Org_name" class="form-control" />
+                <span asp-validation-for="Company.Org_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Region" class="control-label"></label>
+                <input asp-for="Company.Region" class="form-control" />
+                <span asp-validation-for="Company.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.INN" class="control-label"></label>
+                <input asp-for="Company.INN" class="form-control" />
+                <span asp-validation-for="Company.INN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.KPP" class="control-label"></label>
+                <input asp-for="Company.KPP" class="form-control" />
+                <span asp-validation-for="Company.KPP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.OGRN" class="control-label"></label>
+                <input asp-for="Company.OGRN" class="form-control" />
+                <span asp-validation-for="Company.OGRN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Account_number" class="control-label"></label>
+                <input asp-for="Company.Account_number" class="form-control" />
+                <span asp-validation-for="Company.Account_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Org_phone" class="control-label"></label>
+                <input asp-for="Company.Org_phone" class="form-control" />
+                <span asp-validation-for="Company.Org_phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Org_email" class="control-label"></label>
+                <input asp-for="Company.Org_email" class="form-control" />
+                <span asp-validation-for="Company.Org_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Info" class="control-label"></label>
+                <input asp-for="Company.Info" class="form-control" />
+                <span asp-validation-for="Company.Info" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Surname" class="control-label"></label>
+                <input asp-for="Company.Surname" class="form-control" />
+                <span asp-validation-for="Company.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Name" class="control-label"></label>
+                <input asp-for="Company.Name" class="form-control" />
+                <span asp-validation-for="Company.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Patronymic" class="control-label"></label>
+                <input asp-for="Company.Patronymic" class="form-control" />
+                <span asp-validation-for="Company.Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Phone" class="control-label"></label>
+                <input asp-for="Company.Phone" class="form-control" />
+                <span asp-validation-for="Company.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Email" class="control-label"></label>
+                <input asp-for="Company.Email" class="form-control" />
+                <span asp-validation-for="Company.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
