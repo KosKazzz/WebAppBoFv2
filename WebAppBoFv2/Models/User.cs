@@ -15,16 +15,16 @@ namespace WebAppBoFv2.Models
         [DataType(DataType.EmailAddress)]
         public string EmailReg { get; set; }
         public int? RoleId { get; set; }// M
-        public Role Role { get; set; }// M
+        //public Role Role { get; set; }// M
     }
-    public class Role //Mfull class
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public List<User> Users { get; set; }
-        public Role()
-        {
-            Users = new List<User>();
-        }
-    }
+    //public class Role //Mfull class
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //    public List<User> Users { get; set; }
+    //    public Role()
+    //    {
+    //        Users = new List<User>();
+    //    }
+    //}
 }

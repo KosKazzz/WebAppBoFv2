@@ -29,25 +29,25 @@ namespace WebAppBoFv2
             
             services.AddRazorPages();
 
-            services.AddControllersWithViews();//Metanit
+            services.AddControllers();//AS
 
-            //services.AddRazorPages().AddRazorPagesOptions(options =>
-            //{
-            //    options.Conventions.AuthorizePage("/===");
-            //    options.Conventions.AuthorizeFolder("/====");
-            //    options.Conventions.AllowAnonymousToPage("/===");
-            //    options.Conventions.AllowAnonymousToFolder("/===");
-            //});//MSDN
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizePage("/===");
+                options.Conventions.AuthorizeFolder("/====");
+                options.Conventions.AllowAnonymousToPage("/===");
+                options.Conventions.AllowAnonymousToFolder("/===");
+            });//MSDN
 
             services.AddDbContext<WebAppBoFv2Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WebAppBoFv2Context")));
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
-                options =>
-                {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-                    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-                });//Metanit
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+                //options =>
+                //{
+                //    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                //    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                //});//M
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,7 +76,7 @@ namespace WebAppBoFv2
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapControllers();//5 
+                endpoints.MapControllers();//AS
                 //endpoints.MapControllerRoute(name: "default",
                 //    pattern: "{controller=Home}/{action=Index}/{id?} "); //M
             });
